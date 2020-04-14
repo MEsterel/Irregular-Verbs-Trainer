@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<verbs>
+  <verb
+    infinitive="awake">
+    <preterit>awake</preterit>
+    <presentPerfect>awoken</presentPerfect>
+    <translation>éveiller</translation>
+  </verb>
+  <verb
+    infinitive="bite">
+    <preterit>bit</preterit>
+    <presentPerfect>bitten</presentPerfect>
+    <translation>mordre</translation>
+  </verb>
+  <verb
+    infinitive="see">
+    <preterit>saw</preterit>
+    <presentPerfect>seen</presentPerfect>
+    <translation>voir</translation>
+  </verb>
+</verbs>

@@ -1,0 +1,217 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="15.0" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{CE005F39-8E0F-4AF1-8CF6-57FD11A1029B}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <RootNamespace>IVT</RootNamespace>
+    <AssemblyName>Irregular Verbs Trainer</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup>
+    <ApplicationIcon>ukFlagIco.ico</ApplicationIcon>
+  </PropertyGroup>
+  <PropertyGroup>
+    <StartupObject />
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="MExceptionReporter, Version=1.6.0.1, Culture=neutral, processorArchitecture=MSIL">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>Resources\MExceptionReporter.dll</HintPath>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Deployment" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Core\Trainer.cs" />
+    <Compile Include="Events\EventLinker.cs" />
+    <Compile Include="Events\ScoreUpdateEventArgs.cs" />
+    <Compile Include="Events\TimerModeTimerEventArgs.cs" />
+    <Compile Include="Forms\AboutForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\AboutForm.Designer.cs">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\EndScreenForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EndScreenForm.Designer.cs">
+      <DependentUpon>EndScreenForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\DetailedStatsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\DetailedStatsForm.Designer.cs">
+      <DependentUpon>DetailedStatsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\HistoryForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\HistoryForm.Designer.cs">
+      <DependentUpon>HistoryForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Objects\ActionBtnMode.cs" />
+    <Compile Include="Objects\AnswerMode.cs" />
+    <Compile Include="Objects\Gaps.cs" />
+    <Compile Include="Objects\OptionsArgs.cs" />
+    <Compile Include="Objects\TrainingHistory.cs" />
+    <Compile Include="Objects\VerbAnswer.cs" />
+    <Compile Include="Objects\VerbFormAnswer.cs" />
+    <Compile Include="Objects\VerbsAppartionMode.cs" />
+    <Compile Include="Objects\EditRequest.cs" />
+    <Compile Include="Forms\EditVerbsForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\EditVerbsForm.Designer.cs">
+      <DependentUpon>EditVerbsForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Core\Program.cs" />
+    <Compile Include="Forms\OptionsTrainForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\OptionsTrainForm.Designer.cs">
+      <DependentUpon>OptionsTrainForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Forms\TrainerForm.cs">
+      <SubType>Form</SubType>
+    </Compile>
+    <Compile Include="Forms\TrainerForm.Designer.cs">
+      <DependentUpon>TrainerForm.cs</DependentUpon>
+    </Compile>
+    <Compile Include="Objects\Verb.cs" />
+    <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Tools\HistoryManager.cs" />
+    <Compile Include="Tools\StringTool.cs" />
+    <Compile Include="Xml\XmlEditor.cs" />
+    <EmbeddedResource Include="Forms\AboutForm.resx">
+      <DependentUpon>AboutForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EditVerbsForm.resx">
+      <DependentUpon>EditVerbsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\EndScreenForm.resx">
+      <DependentUpon>EndScreenForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\HistoryForm.resx">
+      <DependentUpon>HistoryForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\OptionsTrainForm.resx">
+      <DependentUpon>OptionsTrainForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\TrainerForm.resx">
+      <DependentUpon>TrainerForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Forms\DetailedStatsForm.resx">
+      <DependentUpon>DetailedStatsForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+      <SubType>Designer</SubType>
+    </EmbeddedResource>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Resources.resx</DependentUpon>
+      <DesignTime>True</DesignTime>
+    </Compile>
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\edit16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\go16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\save16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\addFile16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\folder16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\redcross16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\check16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\next16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\gear16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\power16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\exit16.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Content Include="ukFlagIco.ico" />
+    <None Include="Resources\okay16.png" />
+    <None Include="Resources\stop16.png" />
+    <None Include="Resources\flame16.png" />
+    <None Include="Resources\help16.png" />
+    <EmbeddedResource Include="Resources\MExceptionReporter.dll" />
+    <None Include="Resources\update16.png" />
+    <None Include="Resources\studentIco.ico" />
+    <None Include="Resources\end16.png" />
+    <None Include="Resources\end32.png" />
+    <None Include="Resources\student32.png" />
+    <None Include="Resources\clock16.png" />
+    <None Include="Resources\stats32.png" />
+    <None Include="Resources\history16.png" />
+    <None Include="Resources\bin16.png" />
+    <None Include="Resources\addRow16.png" />
+    <None Include="Resources\removeRow16.png" />
+    <Content Include="studentIco.ico" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+</Project>
